@@ -9,12 +9,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/posts', (req, res) => {
+    console.log({ posts });
     res.json({ posts: posts });
 });
 
 app.get('/posts/:postId', (req, res) => {
     const post = posts.find(post => post.id === Number(req.params.postId)) || null;
     const _post = post ? { ...post, date: new Date().toISOString() } : null;
+    console.log({ post: _post });
     res.json({ post: _post });
 });
 
