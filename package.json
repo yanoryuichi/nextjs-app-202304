@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "npx next dev",
     "build": "npx next build",
+    "export": "npx next export",
     "start": "npx next start",
     "lint": "npx next lint"
   },
