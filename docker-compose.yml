@@ -1,14 +1,28 @@
 version: "3"
 services:
-  client:
+  client-dev:
     build:
       context: ./client
-      dockerfile: ../Dockerfile.client
+      dockerfile: ../Dockerfile.client-dev
     volumes:
       - ./client:/home/node/app
       - /home/node/app/node_modules
     ports:
       - 3000:3000
+    depends_on:
+      - server
+  client-prd:
+    build:
+      context: ./client
+      dockerfile: ../Dockerfile.client-prd
+    volumes:
+      - ./client:/home/node/app
+      - /home/node/app/node_modules
+      - /home/node/app/build
+    ports:
+      - 4000:4000
+    depends_on:
+      - server
   server:
     build:
       context: ./server
