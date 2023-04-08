@@ -1,4 +1,4 @@
-/client/.next
-/client/node_modules/
+/client/build
+/client/node_modules
 /client/out
 /server/node_modules/
